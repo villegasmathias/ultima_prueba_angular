@@ -1,0 +1,94 @@
+<div class="panel panel-default"><!--panel de noticias destacadas-->
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Noticias Destacadas</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="row" ng-show="vm.loading">
+		  		<div class="col-xs-12 text-center">
+		  			<div class="lds-ring"><div></div><div></div><div></div><div></div></div><!-- spinner -->
+		  		</div>
+		  	</div>
+		    <div class="row" ng-show="!vm.loading"><!--noticias contenidas en el panel (row contiene las noticias)--><!--ng-show directiva para ocultar el spinner(creo)-->
+			  <div class="col-sm-6 col-md-4" ng-repeat="newsItem in vm.news | orderBy:'publishedAt' | limitTo: 3 " ng-if="newsItem.urlToImage != null"><!--noticia --><!-- newsIntem es objeto variable, es decir el nombre del arreglo--><!--ng-repeat repite la noticas cuantos elementos tenga el arreglo q se refiere a travez de vm.news--><!-- ng-if selecciona solo las q tiene imagenes--><!--limitTo limita a mostrarme solo 3 noticias--><!-- el operador | concatena directivas--><!-- orderBy ordena por string o por fecha (el formato ingles de la fecha q es estandar de pogramacion es mas rapido para ordenar por fecha, ya q esta ordenada como año mes y dia, y solo con mayor y menor lo ordena de manera automatica )--><!-- filter permite pasar solo los q tienen ese valor es decir filtra las demas , tambien puedo dercirle q busque en un campo en particular , es decir en nombre por ejemplo (filter:{title:find	})-->
+			    <div class="thumbnail">
+			      <img ng-src="{{newsItem.urlToImage}}" alt="{{newsItem.title}}"><!--newsItem.urlToImage vincula la imagen del controlador a la vista de la noticia de html-->
+			      <span class="pull-right">{{newsItem.publishedAt | date}}</span><!--pull-right viene definido en bootstrap--><!--date son filtros de angular para cambiar la forma de la fecha , tambien se modifica a mi gusto con dos puntos y las comillas simples-->
+			      <div class="caption">
+			        <h3>{{newsItem.title}}</h3>
+			        <p>{{newsItem.description}}</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="panel panel-default"><!--panel de ultimas noticias-->
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Ultimas Noticias</h3>
+		  </div>
+		  <div class="panel-body">
+		    <div class="row"><!--noticias contenidas en el panel (row contiene las noticias)-->
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="col-sm-6 col-md-4 col-lg-2">
+			    <div class="thumbnail">
+			      <img src="..." alt="...">
+			      <div class="caption">
+			        <h3>Thumbnail label</h3>
+			        <p>...</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		  </div>
+		</div>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="newsApp"><!--le doy una directiva (ng-app) de que el alncance de angular es de todo el html , "newApp" esta linkeando el modulo de js-->
+<head>
+
+	<meta charset="utf-8"><!--para evitar problemas de caracteres como el acento-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--compatibiliza con microsoft edge-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--para el responsive-->
+	<title>Prueba AngularJS 2</title>
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+	<!-- linkeo el spinner-->
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+
+	<!--<input type="text" name="data" ng-model="data">ng-model directiva q guarda en el codigo js lo que le escriba-->
+	<!--<label>{{data}}</label>--muestra lo q escribe la variable bindiada de nombre data , tambien se crea en los modulos-->
+
+	<nav class="navbar navbar-default" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" ui-sref="home">NewsApp</a><!--te redirecciona al html home-->
+	  </div>
+
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li ui-sref-active="active"><a ui-sref="newsIndex">News Index</a></li><!-- ui-sref-active="active" coloca como si estuviera clickeado, lo sombrea-->
+	      <li><a >Link</a></li>
+	      <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#">Action</a></li>
+	          <li><a href="#">Another action</a></li>
+	          <li><a href="#">Something else here</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#">Separated link</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#">One more separated link</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	    <form class="navbar-form navbar-left" role="search">
+	      <div class="form-group">
+	        <input type="text" class="form-control" placeholder="Search">
+	      </div>
+	      <button type="submit" class="btn btn-default">Submit</button>
+	    </form>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="#">Link</a></li>
+	      <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#">Action</a></li>
+	          <li><a href="#">Another action</a></li>
+	          <li><a href="#">Something else here</a></li>
+	          <li class="divider"></li>
+	          <li><a href="#">Separated link</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	  </div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- esto es del ejemplo anterior-->
+	<!--<div class="container" ng-controller="newsController as vm"> compentario:newController tiene el alcanze dentro de este div
+		
+	</div>-->
+
+	<div class="container">
+		<div ui-view></div><!--le indica donde tiene q poner los templates -->
+	</div>
+
+	<!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span> saca de la pagina un icono , lo puedo cambiar el icono cambiando la clase-->
+
+		<!-- Angular JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
+	<!-- Angular Modules-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
+
+	<!-- Angular i18n enlaza el documento a angular para colocar la fecha en español -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/i18n/angular-locale_es-es.js"></script>
+
+	<!-- Enlaza angular app que se encuetra en app/app.js-->
+	<script type="text/javascript" src="app/app.js"></script> 
+
+	<!--Enlaza angular Controllers que se encuentra en app/controlers/newsControlers.js-->
+	<script src="app/controllers/newsController.js"></script>
+
+	<!-- Enlaza angular services -->
+	<script type="text/javascript" src="app/services/newsService.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><!--para hacer funcionar el menu desplegable (dropdown) de el nav bar-->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><!--no se para q es-->
+</body>
+</html>
